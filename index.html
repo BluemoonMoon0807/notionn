@@ -44,6 +44,22 @@
     .header2{
         font-size: 40px;
     }
+    
+    }
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	dark();
+} else {
+	light();
+}
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+	if (event.matches) {
+		dark();
+	} else {
+		light();
+	}
+});
+    
 </style>
 
 </head>
