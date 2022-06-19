@@ -4,6 +4,7 @@
     <meta charset="UTF+8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+  
 
 
     <title>Document</title>
@@ -12,6 +13,20 @@
     body{
         background-color: dark;
     }
+	
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	dark();
+   } else {
+	light();
+   }
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+		if (event.matches) {
+			dark();
+	} else {
+			light();
+	}
+   });
+	
     .box{
     background-color: #A98C73;
     width: 160px;
@@ -44,21 +59,6 @@
     .header2{
         font-size: 40px;
     }
-    
-    }
-
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	dark();
-} else {
-	light();
-}
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-	if (event.matches) {
-		dark();
-	} else {
-		light();
-	}
-});
     
 </style>
 
